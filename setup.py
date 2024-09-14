@@ -8,6 +8,7 @@ setup(
     name=package_name,
     version='0.0.0',
     packages=[package_name],
+    package_dir={package_name: 'src/' + package_name},
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -23,7 +24,11 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'crazyflie_multiagent_mpc = crazyflie_mpc.crazyflie_multiagent_mpc:main'
+            'crazyflie_multiagent_mpc = crazyflie_mpc.crazyflie_multiagent_mpc:main',
+            'HERO_XR_VR = crazyflie_mpc.HERO_XR_VR:main'
         ],
+    },
+    package_data={
+        package_name: ['*.py'],  # This will include all Python files in the package
     },
 )
