@@ -127,7 +127,7 @@ if __name__ == "__main__":
     pathfinder = PathFinder(grid_unit, resolution=None, grid_size=grid_size)
     
     # Load the point cloud
-    pcd = pathfinder.load_point_cloud("/home/cpsl/CrazySim/ros2_ws/src/crazyflie_mpc/point cloud/Vicon1.ply")
+    pcd = pathfinder.load_point_cloud("/home/william/HERO_XR_VR/ros2_ws/src/crazyflie_mpc/point_cloud/Vicon1.ply")
     
     
     # Filter out points out of range

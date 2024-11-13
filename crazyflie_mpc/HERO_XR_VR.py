@@ -52,7 +52,7 @@ class HeroXR(Node):
         self.get_logger().info('Path finder initialized and ready')
 
          # Load the point cloud
-        pcd = self.pathfinder.load_point_cloud("/home/cpsl/CrazySim/ros2_ws/src/crazyflie_mpc/point cloud/Vicon1.ply")
+        pcd = self.pathfinder.load_point_cloud("/home/william/HERO_XR_VR/ros2_ws/src/crazyflie_mpc/point_cloud/Vicon1.ply")
         # Filter out points out of range
         filtered_pcd = self.pathfinder.filter_point_cloud(pcd)
         # Translate to occupancy map
@@ -95,7 +95,7 @@ class HeroXR(Node):
                 
             # Wait until drone get to waypoint
             if not self.is_at_position(self.drone_position, waypoint):
-                if self.is_at_position(self.drone_position, fwaypoint):
+                if self.is_at_position(self.drone_position, waypoint):
                     break
                 self.go_to(self.drone_name, waypoint, yaw=0.0, duration=1.0, relative=False)
                 time.sleep(0.5)
